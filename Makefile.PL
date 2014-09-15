@@ -4,8 +4,11 @@ use utf8;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME           => 'Palm::MaTirelire',
-    VERSION	   => '1.12',
-    PREREQ_PM      => { 'Palm::PDB' => '1.012' },
+    VERSION	   => '1.13',
+    PREREQ_PM      => {
+	'Palm::PDB'	   => '1.015',
+	'Palm::StdAppInfo' => '1.014',
+    },
     ABSTRACT	   => 'Superclass handler for Palm MaTirelire databases',
     AUTHOR         => 'Maxime Soulé <max@ma-tirelire.net>',
 );

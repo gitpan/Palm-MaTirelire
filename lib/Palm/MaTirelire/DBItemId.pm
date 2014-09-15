@@ -1,9 +1,7 @@
-#
-# Author          : Maxime Soule
-# Created On      : Sun Jun  5 16:48:42 2005
-# Last Modified By: Maxime Soule
-# Last Modified On: Mon May  3 14:56:08 2010
-# Update Count    : 1
+=encoding iso-8859-1
+
+=cut
+
 #
 # Copyright (C) 2005, Maxime Soulé
 # You may distribute this file under the terms of the Artistic
@@ -73,7 +71,7 @@ sub new_RecordWithAutoId ($)
     my $id_field = $self->meta_infos->{id_field};
 
     $rec->{$id_field} = $self->get_first_free_id;
-    
+
     return defined($rec->{$id_field}) ? $rec : undef;
 }
 
@@ -90,7 +88,7 @@ sub new_RecordWithId ($$)
     my $rec = $self->new_Record;
 
     $rec->{$id_field} = $id;
-    
+
     return defined($rec->{$id_field}) ? $rec : undef;
 }
 

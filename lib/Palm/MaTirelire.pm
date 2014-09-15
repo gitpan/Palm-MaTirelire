@@ -1,9 +1,7 @@
-#
-# Author          : Maxime Soulé
-# Created On      : Sun Aug 29 21:56:26 2004
-# Last Modified By: Maxime Soule
-# Last Modified On: Mon May  3 15:01:11 2010
-# Update Count    : 5
+=encoding iso-8859-1
+
+=cut
+
 #
 # Copyright (C) 2005, Maxime Soulé
 # You may distribute this file under the terms of the Artistic
@@ -15,7 +13,7 @@ use Palm::Raw();
 
 use base qw(Palm::Raw);
 
-our $VERSION = '1.6';
+our $VERSION = '1.13';
 
 sub new
 {
@@ -23,7 +21,7 @@ sub new
     my $self        = $classname->SUPER::new(@_);
     # Create a generic PDB. No need to rebless it,
     # though.
-    
+
     $self->{creator} = "MaT2";
     $self->{attributes}{resource} = 0;
                                 # The PDB is not a resource database by
@@ -32,16 +30,16 @@ sub new
     $self->{attributes}{Backup} = 1; # Always set the backup bit...
 
     # Have to define type and name in subclasses...
-    
+
     # Give the PDB a blank AppInfo block
     $self->{appinfo} = {};
-    
+
     # Give the PDB a blank sort block
     $self->{sort} = undef;
-    
+
     # Give the PDB an empty list of records
     $self->{records} = [];
-    
+
     return $self;
 }
 
